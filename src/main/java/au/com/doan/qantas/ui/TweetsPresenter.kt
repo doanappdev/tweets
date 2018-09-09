@@ -1,31 +1,22 @@
 package au.com.doan.qantas.ui
 
 import android.os.Environment
-import au.com.doan.qantas.base.BaseItemView
 import au.com.doan.qantas.repository.TweetRepository
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
-import android.os.Environment.DIRECTORY_DOWNLOADS
-import android.os.Environment.getExternalStoragePublicDirectory
 import java.io.BufferedInputStream
 import java.io.File
 import java.io.FileOutputStream
 
-
 class TweetsPresenter constructor(val repository: TweetRepository) : TweetsContract.Presenter, AnkoLogger {
 
     override lateinit var view: TweetsContract.View
-
-    private var photoViewItems = mutableListOf<BaseItemView>()
-
     private var totalFileSize = 0
-
 
     override fun attach(view: TweetsContract.View) {
         this.view = view
     }
-
-
+    
     override fun subscribe() {}
 
     override fun getTweets() {
@@ -54,6 +45,7 @@ class TweetsPresenter constructor(val repository: TweetRepository) : TweetsContr
 
                         val currentTime = System.currentTimeMillis() - startTime
 
+                        // this  code can be used to display download progress bar
                         //val download = Download()
                         //download.setTotalFileSize(totalFileSize)
 
