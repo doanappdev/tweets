@@ -1,6 +1,6 @@
 package au.com.doan.qantas.di
 
-import au.com.doan.qantas.MainActivity
+import au.com.doan.qantas.ui.MainActivity
 import au.com.doan.qantas.QantasApp
 import dagger.BindsInstance
 import dagger.Component
